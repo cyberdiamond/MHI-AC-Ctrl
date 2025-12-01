@@ -10,7 +10,7 @@ There are great descriptions in the WWW related to the topics above. Please use 
 If you open a new issue, please consider the following topics:
 - Use a use a meaningful title, so that the next user with a similar problem can recognize it
 - Which program version do you use?
-- Add the exact name of your AC indoor unit, e.g. SRK 35 ZS-S 
+- Add the exact name of your AC indoor unit, e.g. SRK 35 ZS-S
 - MHI-AC-Ctrl outputs some basic status information via the serial terminal. Please use it for your first analysis and upload it together with a new Issue. Check this [section](#recording-a-basic-log-file)
 
 ## Recording a basic log file
@@ -26,7 +26,7 @@ MHI-AC-Ctrl doesn't support all functions of the infrared remote control. This i
 
 This should be considered especially when you use the IR RC in parallel to MHI-AC-Ctrl.
 
-Connecting the MHI-AC-Ctrl controller will **disable** the RC timer functionality. This also apply to the standard MHI WiFi (or other) controller. See [here](https://github.com/absalom-muc/MHI-AC-Ctrl/issues/148) for more information.
+Connecting the MHI-AC-Ctrl controller will **disable** the RC timer functionality. This also apply to the standard MHI WiFi (or other) controller. See [#148](https://github.com/absalom-muc/MHI-AC-Ctrl/issues/148) for more information and [Passive Mode](SW-Configuration.md#passive-mode) for a workaround.
 
 ## :fire: ESP8266 crashes periodically
 For a periodic crash there are different causes possible:
@@ -43,7 +43,7 @@ If you see other values, please re-check
 
 If MISO frequency>10Hz the program will stop and reboot. This prevents damage of your board or AC because there was a signal detected on the MISO pin which should be an output during normal operation.
 
- Typical faults seen in the past:
+Typical faults seen in the past:
 - SCK frequency = 0Hz => SCK pin not connected
 - SCK frequency < MOSI frequency => SCK and MOSI pins swapped
 - MISO frequency = SCK frequency => MISO and SCK pins shorted
@@ -86,7 +86,7 @@ err_msg_timeout_SCK_high = -4
 However, this does not appear to be critical and is usually not noticed by the user.
 
 ## :fire: Room temperature is toggling
-This effect occurs with some AC models. The cause is unclear. 
+This effect occurs with some AC models. The cause is unclear.
 
-## :fire: Can't see the device in in Arduino IDE 'tools -> port' for OTA 
+## :fire: Can't see the device in in Arduino IDE 'tools -> port' for OTA
 I believe this is a general OTA problem, not related to MHI-AC-Ctrl. I made good experience using [espota.py](https://github.com/esp8266/Arduino/blob/master/tools/espota.py) instead of the Arduino IDE for OTA.

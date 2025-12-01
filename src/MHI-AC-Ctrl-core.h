@@ -155,6 +155,7 @@ class MHI_AC_Ctrl_Core {
     byte new_Vanes0 = 0;
     byte new_Vanes1 = 0;
     bool request_erropData = false;
+    bool passiveMode = false;
     byte new_Troom = 0xff;    // writing 0xff to DB3 indicates the usage of the internal room temperature sensor
     float Troom_offset = 0.0;
     
@@ -186,6 +187,6 @@ class MHI_AC_Ctrl_Core {
     void set_frame_size(byte framesize);  // set framesize to 20 or 33
     void set_3Dauto(AC3Dauto Dauto);      // set the 3D auto mode on or off
     void set_vanesLR(uint vanesLR);       // set the vanes LR (vertical) position
-
+    void set_passive_mode(bool newMode);  // enable or disable passive mode
 
 };
